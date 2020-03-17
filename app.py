@@ -11,6 +11,7 @@ with config_file:
     username = config['username']
     icon_url = config['icon_url']
     webhook_url = config['webhook_url']
+    channel_name = config['channel_name']
 
 new_topics = {}
 
@@ -39,6 +40,7 @@ def build_message(topic):
 
         ret_dict = dict(username=username,
                         icon_url=icon_url,
+                        channel=channel_name,
                         attachments=[dict(
                             author_name=op_username,
                             author_icon=op_avatar,
@@ -92,7 +94,8 @@ def get_latest():
     bot_fin_msg = dict(
         text=f"Went back up until 3 days ago and got {num_posts} new topics.",
         username=username,
-        icon_url=icon_url
+        icon_url=icon_url,
+        channel=channel_name
     )
     requests.post(webhook_url, json=bot_fin_msg)
     return f"Went back up until 3 days ago and got {num_posts} new topics."
@@ -101,6 +104,7 @@ def get_latest():
 def main():
     while True:
         print("Getting latest posts.")
+        print(get_latest())
         print(f"Waiting {config['sleep_time'] / 60} Minutes until next fetch.")
         time.sleep(config['sleep_time'])
 
