@@ -19,3 +19,5 @@ forum_url: 'https://forum.mattermost.org' # The forum url the bot gets the posts
 channel_name: 'town-square' # id of the Mattermost channel to post to
 sleep_time: 600 # Time in seconds between getting new posts
 ```
+
+![Screenshot](screenshot.png)
