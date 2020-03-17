@@ -97,7 +97,8 @@ def get_latest():
         icon_url=icon_url,
         channel=channel_name
     )
-    requests.post(webhook_url, json=bot_fin_msg)
+    if num_posts > 0:
+        requests.post(webhook_url, json=bot_fin_msg)
     return f"Went back up until 3 days ago and got {num_posts} new topics."
 
 
