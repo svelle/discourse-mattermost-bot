@@ -2,4 +2,5 @@ username: 'Discourse'
 icon_url: 'https://cdn3.iconfinder.com/data/icons/logos-and-brands-adobe/512/92_Discourse-512.png'
 webhook_url: ''
 forum_url: ''
+channel_name: 'town-square'
 sleep_time: 600
